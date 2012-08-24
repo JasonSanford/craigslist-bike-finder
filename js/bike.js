@@ -37,6 +37,10 @@
             params.hasPic = 1;
         }
 
+        if ($('#title').is(':checked')) {
+            params.srchType = 'T';
+        }
+
         if ($('#exclude').val().trim().length > 0) {
             params.query += ' ' + (function() {
                 var i,
@@ -47,6 +51,14 @@
                 }
                 return splits.join(' ')
             }());
+        }
+
+        if ($('#price-min').val().trim().length > 0) {
+            params.minAsk = $('#price-min').val().trim();
+        }
+
+        if ($('#price-max').val().trim().length > 0) {
+            params.maxAsk = $('#price-max').val().trim();
         }
 
         url = 'http://' + city + '.craigslist.org/search/bia?' + $.param(params);
@@ -66,7 +78,7 @@
 
         $('#output-help').html(' or click ');
             
-        $('#output-label').show();
+        $('#output-label').text('Copy this link');
     }
 
     function error(message) {
@@ -74,13 +86,19 @@
             .removeClass('success')
             .addClass('error');
 
-        $('#output-url').val('I\'ve got nothing ...');
+        $('#output-url').val('Need more input to create URL ...');
 
         $('#output-help').html(message);
 
-        $('#output-label,#output-link').hide();
+        $('#output-label').text('Needs input ...');
+
+        $('#output-link').hide();
     }
 
     generateUrl();
 
 }())
+
+$(document).ready(function() {
+    $('#price-range-slider').noUiSlider('init');
+});

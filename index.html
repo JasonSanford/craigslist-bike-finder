@@ -8,6 +8,7 @@
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/nouislider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
 </head>
@@ -31,7 +32,9 @@
     </div>
 
     <div class="container">
+
         <div class="row-fluid">
+
             <div class="span4">
                 <h2>1. Choose Your City</h2>
                 <div>
@@ -73,12 +76,18 @@
                     <div class="half">
 
                         <div class="control-group">
+                            <label class="checkbox" for="title">
+                                <input type="checkbox" class="refine" id="title" data-exclude-string="">
+                                Only search title
+                            </label>
+                        </div>
+
+                        <div class="control-group">
                             <label class="checkbox" for="photos">
                                 <input type="checkbox" class="refine" id="photos" data-exclude-string="">
                                 Posts w/ photos
                             </label>
                         </div>
-
 
                         <div class="control-group">
                             <label class="checkbox" for="women">
@@ -94,16 +103,16 @@
                             </label>
                         </div>
 
+                    </div>
+
+                    <div class="half">
+
                         <div class="control-group">
                             <label class="checkbox" for="hipster">
                                 <input type="checkbox" class="refine" id="hipster" data-exclude-string="-fixie -fixed-gear">
                                 No hipster bikes
                             </label>
                         </div>
-
-                    </div>
-
-                    <div class="half">
 
                         <div class="control-group">
                             <label class="checkbox" for="walmart">
@@ -136,16 +145,24 @@
 
         </div>
 
+        <div class="row-fluid">
+            <div class="span4 offset4">
+                <h2>4. Set yo' price</h2>
+                <input id="price-min" type="text" placeholder="min" style="display: inline-block; width: 75px;"> <input id="price-max" type="text" placeholder="max" style="display: inline-block; width: 75px;">
+            </div>
+        </div>
+
     </div>
 
     <div class="container">
         <div class="well">
-            <form class="form-horizontal">
+            <h2 style="margin-top: 0;">5. Get yo' link</h2>
+            <form class="form-horizontal" style="margin-bottom: 0;">
                 <div class="control-group error" id="output">
-                    <label class="control-label" for="output-url" id="output-label">Copy this link</label>
+                    <label class="control-label" for="output-url" id="output-label"></label>
                     <div class="controls">
-                        <input type="text" id="output-url">
-                        <span id="output-help" class="help-inline"> or click </span>
+                        <input style="width: 600px;" type="text" id="output-url">
+                        <span id="output-help" class="help-inline"></span>
                         <a id="output-link" target="_blank" href="#" class="btn">Go!</a>
                     </div>
                 </div>
@@ -158,6 +175,7 @@
     <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bike.js"></script>
+    <script src="js/jquery.nouislider.min.js"></script>
 
 </body>
 </html>
