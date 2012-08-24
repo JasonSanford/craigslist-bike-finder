@@ -35,7 +35,7 @@ body {
     margin-bottom: 5px !important;
 }
 
-.control-group .control-label {
+.control-group .control-label.left {
     display: inline;
     float: none;
     text-align: left;
