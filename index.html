@@ -35,12 +35,18 @@
             <div class="span4">
                 <h2>1. Choose Your City</h2>
                 <div>
-                    <a class="city-select label label-info" href="#denver">Denver</a>
-                    <a class="city-select label" href="#austin">Austin</a>
-                    <a class="city-select label" href="#new-york">New York</a>
-                    <a class="city-select label" href="#portland">Portland</a>
-                    <a class="city-select label" href="#san-francisco">San Francisco</a>
+                    <a class="city-select label label-info" data-cl-subdomain="denver" href="#denver">Denver</a>
+                    <a class="city-select label" data-cl-subdomain="austin" href="#austin">Austin</a>
+                    <a class="city-select label" data-cl-subdomain="newyork" href="#new-york">New York</a>
+                    <a class="city-select label" data-cl-subdomain="portland" href="#portland">Portland</a>
+                    <a class="city-select label" data-cl-subdomain="sfo" href="#san-francisco">San Francisco</a>
+                    <a class="city-select label" data-cl-subdomain="dc" href="#dc">DC</a>
+                    <a class="city-select label" data-cl-subdomain="charlotte" href="#charlotte">Charlotte</a>
+                    <a class="city-select label" data-cl-subdomain="chicago" href="#chicago">Chicago</a>
+                    <a class="city-select label" data-cl-subdomain="la" href="#la">Los Angeles</a>
                 </div>
+                <h4>1b. or enter your city here</h4>
+                <input type="text" id="city" placeholder="City Name (no spaces)">
             </div>
 
             <div class="span4">
@@ -68,7 +74,7 @@
 
                         <div class="control-group">
                             <label class="checkbox" for="photos">
-                                <input type="checkbox" id="photos">
+                                <input type="checkbox" class="refine" id="photos" data-exclude-string="">
                                 Posts w/ photos
                             </label>
                         </div>
@@ -76,21 +82,21 @@
 
                         <div class="control-group">
                             <label class="checkbox" for="women">
-                                <input type="checkbox" id="women">
+                                <input type="checkbox" class="refine" id="women" data-exclude-string="-women's -woman's -womens -womans -woman -women">
                                 No women's bikes
                             </label>
                         </div>
 
                         <div class="control-group">
                             <label class="checkbox" for="children">
-                                <input type="checkbox" id="children">
+                                <input type="checkbox" class="refine" id="children" data-exclude-string="-kids -kid's -children -children's -childrens -youngins -girls -girl's -girl">
                                 No children's bikes
                             </label>
                         </div>
 
                         <div class="control-group">
                             <label class="checkbox" for="hipster">
-                                <input type="checkbox" id="hipster">
+                                <input type="checkbox" class="refine" id="hipster" data-exclude-string="-fixie -fixed-gear">
                                 No hipster bikes
                             </label>
                         </div>
@@ -101,21 +107,21 @@
 
                         <div class="control-group">
                             <label class="checkbox" for="walmart">
-                                <input type="checkbox" id="walmart" checked>
+                                <input type="checkbox" class="refine" id="walmart" data-exclude-string="-next -mongoose -huffy -roadmaster -schwinn -landrider -magna -disney" checked>
                                 No Wal-mart bikes
                             </label>
                         </div>
 
                         <div class="control-group">
                             <label class="checkbox" for="bmx">
-                                <input type="checkbox" id="bmx" checked>
+                                <input type="checkbox" class="refine" id="bmx" data-exclude-string="-bmx" checked>
                                 No BMX bikes
                             </label>
                         </div>
 
                         <div class="control-group">
                             <label class="checkbox" for="shoes">
-                                <input type="checkbox" id="shoes" checked>
+                                <input type="checkbox" class="refine" id="shoes" data-exclude-string="-shoe -shoes" checked>
                                 No shoes
                             </label>
                         </div>
@@ -133,12 +139,16 @@
     </div>
 
     <div class="container">
-        <div class="control-group error" id="output">
-            <label class="control-label" for="output-url" id="output-label">Copy this link</label>
-            <div class="controls">
-                <input type="text" id="output-url">
-                <span class="help-inline">or click Go!</span>
-                <!--<a href="#" class="btn">Go!</a>-->
+        <div class="well">
+            <form class="form-horizontal">
+                <div class="control-group error" id="output">
+                    <label class="control-label" for="output-url" id="output-label">Copy this link</label>
+                    <div class="controls">
+                        <input type="text" id="output-url">
+                        <span id="output-help" class="help-inline"> or click </span>
+                        <a id="output-link" target="_blank" href="#" class="btn">Go!</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
