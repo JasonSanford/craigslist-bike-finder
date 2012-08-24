@@ -26,13 +26,26 @@ body {
 
 .hero-unit {
     margin-top: 60px;
+    margin-bottom: 10px;
     padding: 30px 50px;
+    background: url(../img/old_mathematics.png) repeat;
 }
 
 .control-group {
     margin-bottom: 5px !important;
 }
 
+.control-group .control-label {
+    display: inline;
+    float: none;
+    text-align: left;
+}
+
 .city-select {
     margin: 0 8px 8px 0;
+}
+
+.half {
+    float: left;
+    width: 50%;
 }
