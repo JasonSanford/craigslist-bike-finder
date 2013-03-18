@@ -6,7 +6,7 @@
         if ($this.hasClass('label-info')) {
             return;
         }
-        $('.label-info').removeClass('label-info')
+        $('.label-info').removeClass('label-info');
         $this.addClass('label-info');
         generateUrl();
     });
@@ -20,8 +20,8 @@
             params = {},
             city = $('#city').val().length > 0 ? $('#city').val() : $('.label-info').data('cl-subdomain');
 
-        if (!($('#keywords').val().trim().length > 0)) {
-            error('Enter at least one keyword')
+        if ($('#keywords').val().trim().length < 1) {
+            error('Enter at least one keyword');
             return;
         }
 
@@ -49,7 +49,7 @@
                 for (i = 0; i < len; i++) {
                     splits[i] = '-' + splits[i];
                 }
-                return splits.join(' ')
+                return splits.join(' ');
             }());
         }
 
@@ -77,7 +77,7 @@
             .attr('href', url);
 
         $('#output-help').html(' or click ');
-            
+
         $('#output-label').text('Copy this link');
     }
 
@@ -97,8 +97,4 @@
 
     generateUrl();
 
-}())
-
-$(document).ready(function() {
-    $('#price-range-slider').noUiSlider('init');
-});
+}());
